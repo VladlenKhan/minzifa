@@ -95,5 +95,11 @@ function submitData() {
 
 
 function textByRegex(str) {
-  return str.replace(/<(?!\/?(a|strong|i)\b)[^>]*>/gi, "") ;
+  // Заменяем &nbsp; на перенос строки
+  const stringWithLineBreaks = str.replace(/&nbsp;/g, '\n');
+  
+  // Удаляем все теги кроме разрешенных
+  const sanitizedValue = stringWithLineBreaks.replace(/<(?!\/?(a|strong|i|b)\b)[^>]*>/gi, "");
+  
+  return sanitizedValue;
 }

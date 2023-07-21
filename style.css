@@ -17,7 +17,7 @@ textarea{
     padding:20px;
     font-size: 20px;
     resize: none;
-    
+    color:var(--tg-theme-text-color);
 }
  
 #main{
