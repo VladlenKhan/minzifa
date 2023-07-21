@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Q&A</title>
-</head>
-<body>
-  <main id="main">
-    <h1>Q&A</h1>
-    <br><br>
-    <form id="dataForm">
-      <input type="text" placeholder="Вопрос" id="emailInput" />
-      <br><br>
-      <textarea name="" placeholder="Ответ" id="myeditor" cols="30" rows="10"></textarea>
-      <br><br>
-      <!-- Изменено на 'getOptions()' для загрузки данных перед отображением списка -->
-      <select name="option" id="selectOption">
-        <!-- По умолчанию список пуст, он будет заполнен после загрузки данных -->
-      </select>
-      <br><br>
-      <button type="button" onclick="submitData()">Отправить</button>
-      <br><br><br>
-    </form>
-    <div id="resultContainer"></div>
-  </main>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="app.js"></script>
-  <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
-    <script>
-        window.onload = function() {
-            CKEDITOR.replace('myeditor');
-        };
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Q&A</title>
+  </head>
+  <body>
+    <main id="main">
+      <h1>Q&A</h1>
+      <br /><br />
+      <form id="dataForm">
+        <input type="text" name="question" placeholder="Вопрос" id="emailInput" />
+        <br /><br />
+        <textarea
+          name="answer"
+          placeholder="Ответ"
+          id="myeditor"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <br /><br />
+        <select name="group_id" id="selectOption"></select>
+        <br /><br />
+        <button type="button" onclick="submitData()">Отправить</button>
+        <br /><br /><br />
+      </form>
+      <div id="resultContainer"></div>
+    </main>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/classic/ckeditor.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

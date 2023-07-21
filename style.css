@@ -18,9 +18,7 @@ textarea{
     resize: none;
     
 }
-textarea[placeholder]{
-    text-align: center;
-}
+ 
 #main{
     width:100%;
     padding:70px 10px ;
