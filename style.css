@@ -8,6 +8,7 @@ body{
     font-weight: 200;
     color:var(--tg-theme-text-color);
     background-color: var(--tg-theme-bg-color);
+ 
 }
 textarea{
     width:100%;
@@ -81,4 +82,11 @@ button:active{
         text-align: center;
         width:50%;
     }
+}
+
+#message{
+    color:white;
+    background-color: green;
+    border-radius: 30px;
+    font-size: 20px;
 }

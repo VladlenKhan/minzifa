@@ -40,11 +40,15 @@ function getOptions() {
 getOptions();
 
 // Обработчик события при нажатии на кнопку "Отправить"
+// ... (предыдущий код)
+
+// Обработчик события при нажатии на кнопку "Отправить"
 function submitData() {
   const form = document.querySelector("#dataForm");
   const emailInputValue = document.getElementById("emailInput").value;
   const myeditorValue = textByRegex(editor.getData());
   const selectOptionValue = document.getElementById("selectOption").value;
+  const messageElement = document.getElementById("message");
   
   // Формируем объект с данными для отправки на сервер
   const formData = {
@@ -66,9 +70,29 @@ function submitData() {
     .then((response) => response.json())
     .then((data) => {
       console.log("Ответ сервера:", data); // Выводим ответ сервера в консоль
+
+      // Выводим сообщение об успешной отправке ниже формы
+      messageElement.textContent = "Данные успешно отправлены!";
+
+      // Очищаем значения элементов формы после успешной отправки данных
+      form.reset();
+      editor.setData(""); // Очищаем содержимое редактора
+
+      // Очищаем список данных в selectOption
+      const selectOption = document.getElementById("selectOption");
+      selectOption.innerHTML = "";
+
+      // Вызываем функцию getOptions() для обновления данных в selectOption
+      getOptions();
+
+      // Очищаем сообщение об успешной отправке через некоторое время (например, 5 секунд)
+      setTimeout(() => {
+        messageElement.textContent = "";
+      }, 5000);
     })
     .catch((error) => console.error("Error:", error));
 }
+
 
 function textByRegex(str) {
   return str.replace(/<(?!\/?(a|strong|i)\b)[^>]*>/gi, "") ;

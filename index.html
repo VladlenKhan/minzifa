@@ -18,7 +18,7 @@
           placeholder="Ответ"
           id="myeditor"
           cols="30"
-          rows="10"
+          rows="20"
         ></textarea>
         <br /><br />
         <select name="group_id" id="selectOption"></select>
@@ -26,6 +26,8 @@
         <button type="button" onclick="submitData()">Отправить</button>
         <br /><br /><br />
       </form>
+      <div id="resultContainer"></div>
+      <div id="message"></div>
       <div id="resultContainer"></div>
     </main>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
